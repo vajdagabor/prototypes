@@ -1,0 +1,10 @@
+// Box
+// ===
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
+  background-color: mix(red, white, 10%);
+  cursor: move;
+}

@@ -1,0 +1,93 @@
+$tab-color: mix(green, white, 10%);
+
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin list-clean {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin button-spacing {
+  padding: 10px 30px;
+}
+
+
+// Simple tabbed style
+// -------------------
+
+// Use this placeholder to convert lists into horizontal tabs.
+
+%tabs {
+  @include list-clean;
+  @include clearfix;
+
+  > li {
+    float: left;
+
+    > a {
+      background-color: $tab-color;
+      display: block;
+    }
+
+  }
+}
+
+.simple-tabs {
+  @extend %tabs;
+}
+
+
+// Tabbed navigation
+// -----------------
+//
+// Prominent tabs with more spacing. Can be used on the top of larger blocks.
+
+.nav-tabs {
+  @extend %tabs;
+}
+
+.nav-tabs__link {
+  @include button-spacing;
+  border-top: 2px solid transparent;
+  background-clip: padding-box;
+
+  &:hover {
+    background-color: mix(green, white, 5%);
+    border-top: 2px solid mix(green, white, 50%);
+  }
+
+  // ### Active link
+
+  .nav-tabs__item--active & {
+    border-top: 2px solid green;
+  }
+}
+
+
+// Streching tabbed navigation
+// ---------------------------
+//
+// This container modifies the tabbed nav to be fully stretched within the
+// containing element.
+
+.nav-tabs__stretching-container {
+  display: table;
+  width: 100%;
+
+  .nav-tabs {
+    display: table-row;
+  }
+
+  .nav-tabs__item {
+    display: table-cell;
+    float: none;
+  }
+}

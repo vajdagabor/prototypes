@@ -1,0 +1,25 @@
+// Switch
+// ======
+
+.switch {
+  border: 1px solid red;
+}
+
+.switch__handle {
+  @include square(100px);
+  @include grab-cursor;
+  margin: 10px;
+  border: 1px solid red;
+  background-color: mix(red, white, 10%);
+  transition: {
+    property: transform;
+    duration: .3s;
+  }
+}
+
+.switch__handle--moving {
+  transition: {
+    property: transform;
+    duration: 0;
+  }
+}

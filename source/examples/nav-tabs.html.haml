@@ -1,0 +1,28 @@
+:ruby
+  items = %w(one two three four)
+
+
+%h2 Simple tabs
+
+%ul.simple-tabs
+  - items.each do |item|
+    %li
+      %a{href: "#"}
+        = item
+
+%h2 Tabbed navigation
+
+%ul.nav-tabs
+  - items.each_with_index do |item, index|
+    %li.nav-tabs__item{class: ("nav-tabs__item--active" if index == 0)}
+      %a.nav-tabs__link{href: "#"}
+        = item
+
+%h2 Stretching tabbed navigation
+
+.nav-tabs__stretching-container
+  %ul.nav-tabs
+    - items.each_with_index do |item, index|
+      %li.nav-tabs__item{class: ("nav-tabs__item--active" if index == 0)}
+        %a.nav-tabs__link{href: "#"}
+          = item

@@ -1,0 +1,35 @@
+// ToDo Navigation
+// ===============
+
+/* %nav.todonav
+ *   %ol.todonav--items
+ *     %li.todonav--item 1
+ *     %li.todonav--item 2
+ *     %li.todonav--item 3
+ */
+
+$color: red;
+
+.todonav--items {
+  outline: 1px solid blue;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  max-width: 500px;
+  white-space: nowrap;
+}
+
+.todonav--item {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: 1px solid $color;
+  text-align: center;
+  list-style: none;
+  background-color: mix($color, white, 10%);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
